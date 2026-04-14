@@ -1,0 +1,8 @@
+%init_B_cont=1e-4
+if p.L.pars.species_pool
+    p.B_init = 0.0*repmat(ones(p.W.pars.nspecies,1)/(p.L.pars.nsites+p.L.pars.species_pool-1), p.L.pars.nsites+p.L.pars.species_pool,1) ;
+    p.B_init((end-p.W.pars.nspecies+1):end) = init_B_cont*ones(p.W.pars.nspecies,1)/(p.D.pars.D0+1e-50) ;
+else
+    p.B_init = 0.1*repmat(ones(p.W.pars.nspecies,1)/(p.L.pars.nsites+p.L.pars.species_pool), p.L.pars.nsites+p.L.pars.species_pool,1) ;
+end
+p.init = [p.B_init; p.B_init.*p.R_init; p.B_init.*p.W_init] ;
