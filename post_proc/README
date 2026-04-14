@@ -1,1 +1,18 @@
 
+README for post processor.
+
+To visualize the heatmaps corresponding to the .mar files created by the simulator
+run main.m using matlab. This file has to be modified to adjust input files and
+response variables. Everything is hardcoded
+
+The main lines to change are:
+
+pattern="..."
+
+is a wildcard indicating the .mat files corresponding to a particular experiment (there is 1 .mat file
+for each pixel).
+
+It is possible to change other presentation features but for the main text it should not be necessary to change
+anything else.
+
+
